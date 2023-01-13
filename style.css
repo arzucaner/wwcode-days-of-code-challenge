@@ -1,7 +1,7 @@
 :root {
     --bg-color: #ECF2FF;
-    --text-color: #2B283A;
-    --title-color: #4A4E74;
+    --text-color: #744a53;
+    --title-color: #744a53;
 }
 
 body {
@@ -18,11 +18,17 @@ section {
 h1,
 h2 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  text-align: center;
+  text-align: left;
 }
 
 h1 {
     color: var(--title-color);
     font-size: 3em;
     text-align: center;
+}
+
+html {
+    box-sizing: border-box;
+    background: url('cake.png') fixed;
+    background-size: cover;
 }
