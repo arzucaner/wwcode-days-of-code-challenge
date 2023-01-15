@@ -75,5 +75,13 @@ ul.grid li {
 40%,
 60% {
     transform: translate3d(-4px, 0, 0)
+    }
 }
-}
+
+.excited:hover {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: jump;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
