@@ -16,15 +16,19 @@ section {
 }
 
 h1,
-h2 {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+h2,
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: left;
+  font-weight: bold;
+
 }
 
 h1 {
     color: var(--title-color);
     font-size: 5em;
     text-align: center;
+    font-style: italic;
 }
 
 html {
@@ -45,7 +49,7 @@ ul.grid {
 
 ul.grid li {
     list-style: none;
-    font-size: 3m;
+    font-size: 3em;
     justify-self: left;
 }
 
@@ -79,7 +83,7 @@ ul.grid li {
 }
 
 .excited:hover {
-    animation-duration: 2s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
     animation-name: jump;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -94,3 +98,4 @@ ul.grid li {
    67%   {transform: scale(1,1)      translateY(0);}
    100%  {transform: scale(1,1)      translateY(0);}
 }
+
