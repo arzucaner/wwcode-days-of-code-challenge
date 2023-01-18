@@ -11,4 +11,4 @@ function setTheme(theme) {
     }
 }  
 
-setTheme('light');
+setTheme('dark');
