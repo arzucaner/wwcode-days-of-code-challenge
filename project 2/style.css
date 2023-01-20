@@ -1,0 +1,11 @@
+.heading {
+    color: green;
+    font-size: 15px;
+    transition: color all 0.5; 
+}
+
+.heading:navigation {
+    color: yellow;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
