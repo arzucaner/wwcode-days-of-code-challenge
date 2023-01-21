@@ -2,6 +2,10 @@
     color: green;
     font-size: 15px;
     transition: color all 0.5; 
+    transition-property: font-size;
+    transition-delay: 1s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
 }
 
 .heading:navigation {
