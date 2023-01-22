@@ -13,3 +13,27 @@
 //    font-size: 25px;
 //    letter-spacing: 10px;
 //}
+
+html {
+    box-sizing: border-box;
+    background: url('tree.png') fixed;
+    background-size: cover;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    margin: 0;
+    width: 100%;
+    padding: 5px;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    border-bottom: 3px solid #005aad;
+    flex-wrap: wrap;
+}
