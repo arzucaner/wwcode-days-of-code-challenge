@@ -34,6 +34,54 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-content: center;
-    border-bottom: 3px solid #005aad;
+    border-bottom: 3px solid black;
     flex-wrap: wrap;
+}
+
+.menu-link {
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    background: black;
+}
+
+.menu-item {
+    height: 3em;
+    align-self: center;
+    margin: 5px;
+}
+
+.title-wrapper {
+    margin: 0;
+    background: #00ad03;
+    border-bottom: 3px solid black;
+}
+
+.title {
+    margin: 0;
+    width: 100%;
+    font-weight: 800;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    color: black;
+    text-transform: uppercase;
+    font-size: 4em;
+    text-align: center;
+    transition: color 1s
+}
+
+.image {
+    width: 100%;
+}
+
+.title:hover {
+    color: #00ad03;    
+}
+
+.menu-link:hover {
+    color: #00ad03;
+    font-size: 2.5em;
 }
