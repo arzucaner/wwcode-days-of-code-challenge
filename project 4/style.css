@@ -12,10 +12,26 @@ body {
     background: url("sunset.png");
     background-repeat: no-repeat;
     background-size: cover;
+    animation-name: expand-fade-in;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
 }
 
 .title {
     font-size: 4em;
     text-transform: uppercase;
     margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+
+}
+
+@keyframes expand-fade-in {
+    from {opacity: 0%; width 0%;}
+    to {opacity: 100%:}
 }
