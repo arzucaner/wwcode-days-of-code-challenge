@@ -28,7 +28,7 @@ body {
     animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: both;
-
+    animation-delay: 2s;
 }
 
 @keyframes expand-fade-in {
