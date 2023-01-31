@@ -20,6 +20,7 @@ body {
 
 .title {
     font-size: 4em;
+    font-style: italic;
     text-transform: uppercase;
     margin: 0;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -34,4 +35,15 @@ body {
 @keyframes expand-fade-in {
     from {opacity: 0%; width 0%;}
     to {opacity: 100%:}
+}
+
+@keyframes fade-in {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+@keyframes fade-in {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+
 }
