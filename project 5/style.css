@@ -15,3 +15,15 @@
 @keyframes transform {
     100% {transform: ScaleX(0.5);}
 }
+
+@keyframes transform {
+ 100% {transform: rotate(180deg)}
+}
+
+@keyframes transform {
+    100% {transform: skewY(50deg);} 
+}
+
+@keyframes transform {
+    100% {transform: scaleX(0.5) scaleY(0.5) rotate (45deg) translateX(50px);}
+}
