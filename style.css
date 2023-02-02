@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    background: #242423;
+}
+
+.box {
+    height: 30px;
+    width: 30px;
+}
+
+.box-red {
+    background: #ff4d4d;
+    margin: 0;
+}
+
+.box-blue {
+    background: #738cff;
+    margin: 0;
+}
