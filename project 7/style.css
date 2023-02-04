@@ -3,11 +3,14 @@
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5;
+    transition-timing-function: cubic-bezier(.62,.15,.4,.9);
 }
 
 .hover-text:hover {
     color: #290000;
-    font-size: 20px;
+    font-size: 25px;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .box {
