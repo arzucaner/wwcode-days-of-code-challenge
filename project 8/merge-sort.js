@@ -7,7 +7,32 @@ let mergesort = (
     end = array.length,
     compare = defaultCompare
 ) => {
-    return array.slice(start, end);
+    let length = end - start;
+    if (length <= 1) {return array.slice(start, end); }
+
+    // Divide
+    let pivot = Math.floor(length / 2);
+
+    // Conquer
+    mergesort(array, start, start + pivot, compare);
+    let left = mergesort (array, start, start + pivot, compare);
+    let right = mergesort(array, start + pivot, end, compare);
+
+    // Combine
+    let sorted = [];
+    let i = 0, j = 0;
+    for (let k = 0; k < length; k++) {
+        if (i < left.length && compare(left[i], right[j]) <= 0) {
+            sorted.push(left[i]);
+            i++;
+        } else {
+            sorted.push(left[i]);
+            j++;
+        }
+        
+    }
+
+    return sorted;
 };
 
 export default mergesort;
