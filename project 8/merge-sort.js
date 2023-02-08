@@ -35,4 +35,11 @@ let mergesort = (
     return sorted;
 };
 
-export default mergesort;
+let mergesortArraySplit = (
+    array,
+    compare = defaultCompare
+) => {
+    return array;
+};
+
+export default mergesortArraySplit;
