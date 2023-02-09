@@ -1,3 +1,5 @@
+import ArrayView from './array-view.js';
+
 let defaultCompare = (a, b) =>
 a> b ? 1 : (a < b ? -1 : 0);
 
@@ -35,11 +37,7 @@ let mergesort = (
     return sorted;
 };
 
-let mergesortArraySplit = (
-    array,
-    compare = defaultCompare
-) => {
-    return array;
-};
-
-export default mergesortArraySplit;
+let mergesortArraySplitAndView = (array, ...args) => 
+    mergesortArraySplit(ArrayView(array),...args);
+    
+export default mergesortArraySplitAndView;
