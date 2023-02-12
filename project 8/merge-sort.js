@@ -30,8 +30,7 @@ let mergesort = (
         } else {
             sorted.push(left[i]);
             j++;
-        }
-        
+        }      
     }
 
     return sorted;
@@ -41,36 +40,35 @@ let mergesortArraySplit = (
     array,
     compare = defaultCompare = 
 ) => {
-    if (array.length <= 1) {retuen array.toArray(); }
+    if (array.length <= 1) {return array.toArray(); }
 
+    // Divide
+    let pivot = Math.floor(array/length / 2);
 
-// Divide
-let pivot = Math.floor(array/length / 2);
+    // Conquer
+    let left = mergesortArraySplit(array.slice(0, pivot), compare);
+    let right = mergesortArraySplit(array.slice(pivot, array.length), compare);
 
-// Conquer
-let left = mergeArraySplit(array.slice(0, pivot), compare);
-let right = mergesortArraySplit(array.slice(pivot, array.length), compare);
-
-// Combine
-let sorted = [];
-let i = 0, j = 0;
-for (let k = 0; k <array.length; k++ {
-    if (i < left.length && compare(left[i]) <= 0) {
+    // Combine
+    let sorted = [];
+    let i = 0, j = 0;
+    for (let k = 0; k <array.length; k++ {
+        if (i < left.length && compare(left[i]), right[j]) <= 0) {
         sorted.push(left[i]);
         i++;
     } else {
         sorted.push(right[j]);
-        ji++;
+        j++;
     }
 }
 
-return sorted
-}
+    return sorted;
+    };
 
-let mergesortArraySplitAndView = (array, ...args) => 
+    let mergesortArraySplitAndView = (array, ...args) => 
     mergesortArraySplit(ArrayView(array),...args);
 
-let mergesortWithQueue = (
+    let mergesortWithQueue = (
     array,
     compare = defaultCompare
 ) => {
@@ -78,5 +76,47 @@ let mergesortWithQueue = (
 
     // Divide
     let pivot = Math.floor(array.length / 2);
+
+    // Conquer
+    let left = mergesortWithQueue(array.slice(0, pivot), compare);
+    let right = mergesortWithQueue(array.slice(pivot, array.length), compare);
+
+    // Combine
+    return array.map(() =>
+    left.length > 0 && compare(left[0], right[0]) <= 0
+        ? left.sift()
+        : right.sift()
+    );
+};
+
+    let Cursor = (
+    array,
+    pointer = 0
+) => ({
+    shift: () => array[pointer++],
+    peek: () => array[pointer],
+    length: () => array/length - pointer,
+});
+
+    let mergesortWithCursor = (
+    array,
+    compare = defaultCompare
+) => {
+    if (array.length <= 1) {return array; }
+
+    // Divide
+    let pivot = Math.floor(array.length / 2);
+
+    // Conquer
+    let left = Cursor(mergesortWithCursor(array.slice(0, pivot), compare));
+    let right= Cursor(mergesortWithCursor(array.slice(pivot, array.length), compare));
+
+    //Combine
+    return array.map(() =>
+      left.length() > 0 && compare(left.peek(), right.peek()) <= 0
+      ?left.shift()
+      :right.shift()
+    );      
+};
     
-export default mergesortArraySplitAndView;
+export default mergesortWithCursor;
