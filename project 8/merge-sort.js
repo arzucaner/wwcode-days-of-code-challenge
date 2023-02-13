@@ -1,4 +1,5 @@
 import ArrayView from './array-view.js';
+import times from 'lodash.times';
 
 let defaultCompare = (a, b) =>
 a> b ? 1 : (a < b ? -1 : 0);
@@ -112,11 +113,33 @@ let mergesortArraySplit = (
     let right= Cursor(mergesortWithCursor(array.slice(pivot, array.length), compare));
 
     //Combine
-    return array.map(() =>
+    return times(array.length,() =>
+    //return array.map(() =>
       left.length() > 0 && compare(left.peek(), right.peek()) <= 0
       ?left.shift()
       :right.shift()
     );      
 };
-    
+
+let mergesorthWithCursorAndArrayView = (array, ...args) =>
+    mergesortWithCursor(ArrayView(array), ...args);
+
+let split = (
+    array,
+    pivot = Math.floor(array.length / 2)
+) => {
+
+};
+
+let merge = (left, right, compare) => {
+
+};
+
+let mergesortSimple = (
+    array,
+    compare = defaultCompare
+) => {
+    return array;
+};
+ 
 export default mergesortWithCursor;

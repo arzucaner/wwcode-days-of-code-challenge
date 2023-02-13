@@ -1,7 +1,7 @@
 let ArrayView = (
     array,
-    start = 0
-    end = array.length
+    start = 0,
+    end = array.length,
 ) => ({
     start,
     length: end - start,
