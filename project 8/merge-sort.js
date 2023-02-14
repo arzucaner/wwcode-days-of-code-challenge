@@ -127,19 +127,34 @@ let mergesorthWithCursorAndArrayView = (array, ...args) =>
 let split = (
     array,
     pivot = Math.floor(array.length / 2)
-) => {
-
-};
+) => [
+    array.slice(0, pivot),
+    array.slice(pivot,array.length)
+];
 
 let merge = (left, right, compare) => {
-
+    left = Cursor(left);
+    right = Cursor(right);
+    return times(array,length, () =>
+        left.length() > 0 && compare(left.peek(), right.peek()) <= 0
+            ? left.shift()
+            : right.shift()
+    );
 };
 
 let mergesortSimple = (
     array,
     compare = defaultCompare
 ) => {
-    return array;
+    if( array.length <= 1) { return array.toArray(); };
+
+    let [left, right ] = split(array);
+
+    return merge(
+        mergesortSimple(left, compare)
+        mergesortSimple(right, compare)
+        compare
+    );
 };
- 
-export default mergesortWithCursor;
+
+export default mergesortSimple;
