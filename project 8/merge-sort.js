@@ -151,10 +151,13 @@ let mergesortSimple = (
     let [left, right ] = split(array);
 
     return merge(
-        mergesortSimple(left, compare)
-        mergesortSimple(right, compare)
+        mergesortSimple(left, compare),
+        mergesortSimple(right, compare),
         compare
     );
 };
+
+let mergesortSimpleWithArrayView = (array, ...args) =>
+    mergesortSimple(ArrayView(array), ...args);
 
 export default mergesortSimple;
