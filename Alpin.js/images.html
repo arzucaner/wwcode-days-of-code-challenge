@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.8/dist/alpine.js"defer></script>
+</head>
+<body class="bg-gray-400">
+    <div class="container mx-auto px-4 mt-4" x-data="{ image: 'image1' }">
+        <div>
+         <img src="chicken salad.png" alt="chicken salad" x-show="image === 'image1'">
+         <img src="chicken salad making.png" alt="chicken salad making" x-show="image === 'image2'">
+         <img src="chicken salad sos.png" alt="chicken salad sos" x-show="image === 'image3'">
+        </div>
+        <div class="flex items-center mt-4">
+            <a href="#" class="border border-transparent hover:border-yellow-500" :class="{'border-yellow-500' 
+            : image === 'image1'}" @click.prevent="image = 'image1'"><img src="/chicken slad.png" alt="chicken 
+            slad" class="w-12"></a>
+            <a href="#" class="border border-transparent hover:border-yellow-500" :class="{'border-yellow-500' 
+            : image === 'image2'}" @click.prevent="image = 'image2'"><img src="/chicken slad making.png" 
+            alt="chicken slad making" class="w-12"></a>
+            <a href="#" class="border border-transparent hover:border-yellow-100" :class="{'border-yellow-500' 
+            : image === 'image3'}" @click.prevent="image = 'image3'"><img src="/chicken slad sos.png" 
+            alt="chicken slad sos" class="w-12"></a>
+        </div>
+    </div>
+</body>
+</html>
