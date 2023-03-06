@@ -11,15 +11,16 @@
                 <li class="-mb-px mr-1">
                     <a
 
-                    class="inline-block rounded-t py-2 px-4 font-semibold hover:text-blue-800 bh-white text- 
-                    blue-700 border-l border-t border-r" href="#"
+                    class="inline-block rounded-t py-2 px-4 font-semibold hover:text-blue-800 bh- 
+                    white text-blue-700 border-l border-t border-r" href="#"
                     @click.prevent="tab = 'tab1'"
                     >Tab 1</a>
                 </li>
                 <li class="-mb-px mr-1">
                     <a
 
-                        class="inline-block py-2 px-4 text-blue-500 hover:text-blue-800 sont-semibold"
+                        class="inline-block py-2 px-4 text-blue-500 hover:text-blue-800 sont- 
+                        semibold"
                         :class="{ 'bg-white text-blue-700 border-l border-t border-r' : tab ===
                         'tab2' }"
                         href="#"
@@ -30,7 +31,8 @@
                 <li class="-mb-px mr-1">
                     <a
 
-                        class="inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+                        class="inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font- 
+                        semibold"
                         :class="{ 'bg-white text-blue-700 border-l border-t border-r' : tab ===
                         'tab3' }"
                         href="#"
@@ -41,18 +43,24 @@
             </ul>
             <div class="content bg-white px-4 py-4 border-l border-r border-b pt-4">
                 <div x-show="tab === 'tab1'">
-                    Tab1 content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A placeat omnis 
-                    autem accusamus harum, excepturi quibusdam cumque error, ex distinctio eveniet asperiores 
+                    Tab1 content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A 
+                    placeat omnis 
+                    autem accusamus harum, excepturi quibusdam cumque error, ex distinctio 
+                    eveniet asperiores 
                     quaerat magni maiores ipsa illo perferendis, minima quisquam.
                 </div>
                 <div x-show="tab === 'tab2'">
-                    Tab2 content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A placeat omnis 
-                    autem accusamus harum, excepturi quibusdam cumque error, ex distinctio eveniet asperiores 
+                    Tab2 content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A 
+                    placeat omnis 
+                    autem accusamus harum, excepturi quibusdam cumque error, ex distinctio 
+                    eveniet asperiores 
                     quaerat magni maiores ipsa illo perferendis, minima quisquam.
                 </div>
                 <div x-show="tab === 'tab3'">
-                    Tab3 content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A placeat omnis 
-                    autem accusamus harum, excepturi quibusdam cumque error, ex distinctio eveniet asperiores 
+                    Tab3 content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A 
+                    placeat omnis 
+                    autem accusamus harum, excepturi quibusdam cumque error, ex distinctio 
+                    eveniet asperiores 
                     quaerat magni maiores ipsa illo perferendis, minima quisquam.
                 </div>
             </div>    
