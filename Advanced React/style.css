@@ -121,3 +121,32 @@ body {
     margin-right: -10px;
     z-index: 1;
 }
+
+//
+
+* {
+    box-sizing: border-box;    
+}
+
+body {
+    margin: 0;
+    background-color: rebeccapurple;
+    color: white;
+    padding: 2rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+}
