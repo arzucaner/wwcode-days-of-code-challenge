@@ -57,3 +57,17 @@ function reducer(state = {count: 0}, action) {
                 return state
     }
 }
+
+store.dispatch(increment())
+store.dispatch ({type:"WEIRD"})
+
+// Payload in action creators
+
+function changeCount(amount = 1) {
+    return {
+        type: "CHANGE_COUNT",
+        payload: amount
+    }
+}
+
+
