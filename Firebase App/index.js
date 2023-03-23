@@ -11,14 +11,36 @@ const shoppingListInDB = ref(database, "shoppingList")
 
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
+const shoppingListEl = document.getElementById("shopping-list")
 
 addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value
 
     push(shoppingListInDB, inputValue)
 
-    inputFieldEl.value = ""
+    clearInputFieldEl()
 
-    shoppingListEl.innerHTML += `<li>${inputValue}</li>`
+    appendItemToShoppingListEl(inputValue)
 
 })
+
+onValue(shoppingListInDB, function(snapshot) {
+    let itemsArray = Object.values(snapshot.val())
+
+    for (let i = 0; i <itemsArray.length; i++) {
+
+        appendItemToShoppingListEl(itemsArray[i])
+    }
+})
+
+function clearInputFieldEl() {
+    inputFieldEl.value = ""
+}
+
+function appendItemToShoppingListEl(itemValue) {
+    shoppingListEl.innerHTML += `<li>$(itemValue)</li>`
+}
+
+let User = {
+    "00": "arzuguneycaner@gmail.com"
+}
