@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings= {
-    databaseURL: "https://playground-c5b18-default-rtdb.europe-west1.firebasedatabase.app"
+    databaseURL: "https://playground-c5b18-default-rtdb.europe-west1.firebasedatabase.app/"
 }
 
 const app = initializeApp(appSettings)
@@ -19,13 +19,12 @@ addButtonEl.addEventListener("click", function() {
     push(shoppingListInDB, inputValue)
 
     clearInputFieldEl()
-
-    appendItemToShoppingListEl(inputValue)
-
 })
-
+ 
 onValue(shoppingListInDB, function(snapshot) {
     let itemsArray = Object.values(snapshot.val())
+
+    clearShoppingListEl()
 
     for (let i = 0; i <itemsArray.length; i++) {
 
@@ -33,14 +32,14 @@ onValue(shoppingListInDB, function(snapshot) {
     }
 })
 
+function clearShoppingListEl() {
+    shoppingListEl.innerHTML = ""
+}
+
 function clearInputFieldEl() {
     inputFieldEl.value = ""
 }
 
 function appendItemToShoppingListEl(itemValue) {
     shoppingListEl.innerHTML += `<li>$(itemValue)</li>`
-}
-
-let User = {
-    "00": "arzuguneycaner@gmail.com"
 }
