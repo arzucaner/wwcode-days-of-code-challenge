@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    background-color: bisque;
 }
 
 .thumbnails {
@@ -21,4 +22,11 @@ a{
 
 img {
     display: block;
+}
+
+h1 {
+    color: var(--title-color);
+    font-size: 3em;
+    text-align: center;
+    font-style: italic;
 }
