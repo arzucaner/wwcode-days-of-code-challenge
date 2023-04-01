@@ -29,7 +29,7 @@ li {
 }
 
 .icon {
-    width: 25px;
+    width: 30px;
 }
 
 .align-right {
@@ -56,6 +56,7 @@ h1 {
     justify-content: space-between;
     gap: 20px;
     margin: 0 25px;
+    font-size: medium;
 }
 
 .img-banner {
@@ -65,6 +66,7 @@ h1 {
     background-color: #cd6858;
     color: whitesmoke;
     padding: 10px;
+
 }
 
 button {
@@ -93,4 +95,9 @@ button {
 .chatbox-img {
     margin: auto;
     width: 50%;
+}
+
+img {
+    height: auto;
+    max-width: 70%;
 }
