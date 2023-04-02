@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+
+        <style>
+            * {
+                --headerFontSize: 2rem;
+                --headerPadding: 0.5rem;
+                --footerFontSize: 1rem;
+                --footerPadding: 1rem;
+            }
+
+            header {
+                background-color: lightgreen;
+                font-size: var(--headerFontSize);
+                padding: var(--headerPadding);
+                text-align: center;
+            }
+
+            main {
+                background-color: lightblue;
+                font-size: 1.5rem;
+                text-align: center;
+                height: calc(
+                    100vh
+                    - var(--headerFontSize)
+                    -(2 * var(--headerPadding))
+                    -var(--footerFontSize)
+                    - (2 * var(--footerPadding))
+                );
+                overflow-y: auto;
+            }
+
+            footer {
+                background-color: lightgreen;
+                font-size: var(--footerPadding);
+                padding: var(--footerPadding);
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>Header</header>
+        <main>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel illum, voluptatibus 
+            maxime pariatur magnam culpa tempora reiciendis dolores. Aperiam reprehenderit quasi, 
+            labore quia aut natus molestias neque voluptate ducimus eos?
+
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam consequuntur 
+            dignissimos nisi tempore blanditiis iste labore minus, laborum fugiat maiores ad 
+            quidem pariatur facilis nesciunt distinctio voluptatibus at ratione laudantium?
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, dignissimos. Quae 
+            beatae ratione dignissimos, eius, asperiores eaque minima libero doloremque sequi 
+            distinctio harum? Nisi excepturi iste, dignissimos eveniet dolor sapiente.
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus non accusantium nam 
+            quaerat officia possimus tempore voluptatem sapiente porro totam aspernatur, 
+            cupiditate est pariatur impedit quos iure aliquid alias doloremque.
+
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, nihil dolore 
+            laboriosam exercitationem tenetur illum quibusdam asperiores explicabo at. Ad 
+            asperiores molestias quam deleniti molestiae aut laborum voluptatum. Sed, facilis?
+        </main>
+        <footer>Footer</footer>
+
+        <script src="index.pack.js"></script>
+    </body>
+</html>
