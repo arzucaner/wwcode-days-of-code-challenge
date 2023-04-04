@@ -32,9 +32,17 @@ function buildWeek(day) {
         day = getNextDay(day)
         return weekday
     })
-
 }
 
-console.log(buildWeek(firstDay))
-
 let week = buildWeek(firstDay)
+
+let schedule = document.getElementById("WeeklySchedule")
+let scheduleHtml = week.reduce((accum, day) => {
+    return accum + `<div class="day">
+    <div>${weekdays[day.date.getDay()]} - ${getDayTasksComplete(day)} Complete</div>
+    <div class="tasks")}
+         ${tasksToHtml(day.tasks)}
+    </div>
+</div>`
+}, '')
+
