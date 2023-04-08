@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <style>
+            #MonthlyExpenses {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .day {
+                width: calc(100% / 3);
+                height: calc(var(--mainHeight) / 4);
+                border: 0.1rem solid black;
+                box-sizing: border-box;
+            }
+
+            .day:nth-of-type(even) {
+                background-color: lightyellow;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>Monthly Expense Sheet</header>
+        <main id="MonthlyExpenses"></main>
+        <footer>Shedule Your Monthly!</footer>
+
+        <script src="index.pack.js"></script>
+    </body>
+</html>
