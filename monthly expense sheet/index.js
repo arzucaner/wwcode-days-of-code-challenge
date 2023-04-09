@@ -4,6 +4,55 @@ function roll(min, max, floatFlag) {
 }
 
 let startDay = new Date("3/15/2023")
+let month = buildMonth(startDay)
+
+let annualIncome = roll(31000, 40000, 1).toFixed(2)
+let monthlyIncome = parseFloat(annualIncome) / 12
+let rent = roll(1200, 1800, 1).toFixed(2)
+let utilities = roll(300, 500, 1).toFixed(2)
+let montlyBudget = montlyIncome - parseFloat(rent) - parseFloat(utilities)
+let montlyNetValue = getMonthNetValue()
+
+displayMonth(month, monthlyBudget, monthlyNetValue)
+displayExpenses()
+
+function generateExpenses() {
+    let expenseCount = roll(0,4)
+    return [...Array(expenseCount)].map((_, i) => {
+        return {
+            index: i,
+            value: roll(1, 30, 1)
+
+        }
+    })
+}
+
+function displayExpenses() {
+    let days = document.getElementsByClassName('day')
+    Array.from(days).forEach(function(day, i) {
+        let dayHtml = day.innerHTML
+        dayHtml += month[i].expenses.reduce(function(accum, expense) {
+            return accum + `<div class="expense">
+            -\$${expense.value.toFixed(2)}
+            </div>`
+        }, '')
+        day.innerHTML = dayHtml
+    })
+}
+
+function getMonthNetValue() {
+    let monthlyExpenseTotal = month.reduce(function(accum, day) {
+        return accum + getDailyCost(day)
+    }, 0)
+
+    return monthlyBudget - monthlyExpenseTotal
+}
+
+function getDailyCost(day) {
+    return day.expenses.reduce(function(accum, expense) {
+        return accum + parseFloat(expense.value)
+    }, 0)
+}
 
 function getNextDay(day) {
     let nextDay = new Date(day)
@@ -12,14 +61,14 @@ function getNextDay(day) {
 }
 
 function buildMonth(day) {
-    let daysInMonth = getDaysInMonth(day.getMonth() + 1, day.getFull())
+    let daysInMonth = getDaysInMonth(day.getMonth() + 1, day.getFullYear())
     let iterableDay = new Date(day)
     iterableDay.setDate(1)
     let month = [...Array(daysInMonth)].map((_, i) => {
         let monthDay = {
             index: i,
             date: iterableDay,
-            expenses: []
+            expenses: generateExpenses()
         }
         iterableDay = getNextDay(iterableDay)
         return monthDay
@@ -31,12 +80,12 @@ function getDaysInMonth(month, year) {
     return new Date(year, month, 0).getDate()
 }
 
-let month = buildMonth(startDay)
-
-function displayMonth(month) {
-    let monthHtml = month.reduce(function(accumulator, day) {
-        return accumulator + `<div class="day">${day.date.getDate()}</div>`
+function displayMonth(month, budget, netValue) {
+    let monthHtml = `<div class="monthly-summary">
+        Budget: \$${budget.toFixed(2)} | Net Value: \$${netValue.toFixed(2)}
+    </div>` +
+    month.reduce(function(accumulator, day) {
+       return accumulator + `<div class="day">${day.date.getDate()}</div>`
     }, '')
     document.getElementById('MonthlyExpenses').innerHTML = monthHtml
 }
-displayMonth(month)

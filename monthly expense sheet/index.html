@@ -3,9 +3,19 @@
     <head>
         <link rel="stylesheet" href="index.css">
         <style>
+            * {
+                --expenseSheetHeight: calc(var(--mainHeight) - 3.5)
+            }
+
             #MonthlyExpenses {
                 display: flex;
                 flex-wrap: wrap;
+            }
+
+            .monthly-summary {
+                width: 100%;
+                padding: 1rem;
+                font-size: 1.5rem;
             }
 
             .day {
@@ -17,6 +27,11 @@
 
             .day:nth-of-type(even) {
                 background-color: lightyellow;
+            }
+
+            .expense {
+                color: red;
+                padding: 0.1rem;
             }
         </style>
     </head>
