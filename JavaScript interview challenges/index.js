@@ -128,3 +128,69 @@ function emojifyPhrase(phrase){
 }
 
 console.log(emojifyPhrase("I :heart: my :elephant:"));
+
+/* Write a function to check if two strings of lowercase letters are anagrams. Return true if the word is an anagram. Return false if it isn't.
+*/
+
+function isAnagram(str1, str2){
+    // are the strings the same length? if yes return false.
+    if(str1.length !== str2.length) return false;
+
+    // split string into an array
+    // sort
+    // join the array back together as a string
+    const newStr1 = str1.split('').sort().join('');
+
+    // repait with second word
+    const newStr2 = str2.split('').sort().join('');
+
+    // are the two words equal? true or false
+    return newStr1 === newStr2;
+}
+
+//console.log(isAnagram("allergy", "gallery"));
+console.log(isAnagram("inch", "chin"));
+console.log(isAnagram("night", "thing"));
+//console.log(isAnagram("treasure", "measure"));
+
+/* We Come in peace!
+We've received what (we assume) is a message of peace and brotherhood from an alien planet. They almost got it right, but the messages are an alien planet/ Tehy almost got it right, but the messages are backward. write functions to reverse the backward messages so we can read what they have to say!
+*/
+
+const title = ":htraE no od ot ffuts";
+const messages = [
+    "maerc eci yrt",
+    "rewoT leffiE tisiV",
+    "noom eht ot snamuh etacoleR",
+    "egrahc ni stac tuP",
+]
+
+/* Step 1: Reverse a string
+Write a function that takes in a string and returns the reverse of that string. An interviewer may want to check if you know your string methods, or may want to know if you can reverse a string manually.
+Practice both ways!
+*/
+
+// reverse a string manually
+function reverseString(str){
+    // initialize a new empty string
+    let reversedString = "";
+    // loop through original string backwards, adding each character to the new string
+    for(let i = str.length - 1; i >= 0; i--){
+        reversedString += str[i];
+    }
+    return reversedString
+}
+
+/* Step 2: Now we'll reverse all strings in an array. Write a function that takes in an array of strings and returns a new array with all string reversed.
+
+You can use reuse your reverseString() function, use string methods, or reverse the string manually.
+*/
+
+function reverseStringsInArray(arr){
+    return arr.map(item => reverseString(item));
+}
+
+console.log(reverseString(title));
+console.log(reverseStringsInArray);
+
+
