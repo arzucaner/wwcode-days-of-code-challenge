@@ -193,4 +193,92 @@ function reverseStringsInArray(arr){
 console.log(reverseString(title));
 console.log(reverseStringsInArray);
 
+/*
+Palindromes are words that are the same forward or backward.
+For example, the words "noon" and "kayak" are a palindromes.
 
+Write a function to check if a lowercased string of letters is a palindrome.
+If the word is palindrome, return true. If it isn't, return false.
+*/
+
+// Solution 1: for loop
+
+function isPalindrome(str){
+    // reberse the word using a backeatd for loop to create a new string
+    let reverseStr = "";
+
+    for(let i = str.length - 1; i >= 0; i--){
+        reverseStr += str[i];
+    }
+
+    // compare the new string to the original word - are they equal?
+       // yes - return true
+       // no - return false
+    return reverseStr === str;
+}
+
+// Test your function
+console.log(isPalindrome("abba"));
+console.log(isPalindrome("civic"));
+console.log(isPalindrome("octopus"));
+console.log(isPalindrome("pumpkins"));
+console.log(isPalindrome("madam"));
+
+/*
+Grandpa's hand isn't as steady as it used to be. You finally convinced him
+to start using a password manager, but he accidentally typed and saved his 
+password with a bunch of extra characters. Help him recover his password by removing all the duplicate characters.
+
+Your function should take in a string of characters and return a string with the duplicate characters removed. Assume that your input is lowercased with only letters and numbers.
+*/
+
+const password = "698098dvsljlgfawgkjbdvkjvhjkdhakjbkjbkj2456";
+
+function removeDupeChars(chars){
+    // create a new, empty string callad dupesRemoved
+    let dupesRemoved = '';
+
+    //loop through the string we want to remove dupes from
+    for(let i = 0; i < chars.length; i++){
+        if(!dupesRemoved.includes(chars[i])){
+            // if no, add it
+            dupesRemoved += chars[i];
+        }
+           // if yes, keep going through the loop (do nothing)
+    }
+
+    // dupesRemoved -- it has no duplicates!
+    return dupesRemoved;
+}
+
+console.log(removeDupeChars("aabbcc12222"));
+
+/*
+How often do the letters in your name repeat?
+
+Write a function that counts how many times each letter of your name
+occurs. Your function should take in your first and last name and return
+an object where the keys are each character in your name, and the value
+is how many times that character appears in your name.
+*/
+
+function countChars(str){
+    // initialize a new empty object to hold the letter counte
+    const count = {};
+    // remove all spaces and lowercase all characters of the input str
+    const name = str.toLowerCase().split(" ").join("");
+    // loop through the letters of the string
+    for(let i = 0; i < name.length; i++){
+        // if the character is not the obj, add it, give it a value of 1
+        if(!count[name[i]]){
+            count[name[i]] = 1;
+        } else {
+            // if the character is already in the object, increment that char's value
+            count[name[i]] += 1;
+        }
+    }
+
+    return count
+}
+
+console.log(countChars("Missisippi"));
