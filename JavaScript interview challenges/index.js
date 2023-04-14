@@ -282,3 +282,103 @@ function countChars(str){
 }
 
 console.log(countChars("Missisippi"));
+
+/* Chef Mario's Recipe Book
+Chef Mario was in the middle of writing his cookbook masterpiece
+when he spilled coffee on his keyboard! Now all his recipes have repeat
+ingredients.
+
+Help save Chef Mario's cookbook by writing a function that takes in an array
+and returns a new array with all the duplicates removed.
+*/
+
+const eggScrambleRecipe = [
+    "🥓 bacon",
+    "🥓 bacon",
+    "🥚 eggs",
+    "🫑green pepers",
+    "🧀cheese",
+    "🌶️hot sauce",
+    "🥓 bacon",
+    "🥦broccoli",
+    "🧀cheese",
+    "🥦broccoli",
+    "🌶️hot sauce",
+]
+
+function removeDupesFromArray(arr){
+    // create a new arr to hold unique items
+    // for each item in recipe arr
+       // if the item is NOT yet in the unique arr, push it in
+       // if it is in the unique arr, move on to the next item (do nothing)
+    // return the unique arr
+
+    const uniqueItems = [];
+
+    arr.forEach(item => {
+        if(!uniqueItems.includes(item)){
+            uniqueItems.push(item);
+        }
+    });
+    return uniqueItems;
+}
+
+console.log(removeDupesFromArray(eggScrambleRecipe));
+
+
+/* I want to know how many new guests have attended my online event.
+I have array of first-time attendees for each month of the year.
+Can you help me find the total number of attendees! Your function should take in array and return a number representing the total number of new attendees.
+*/
+
+const guestCount = [50,53,61,60,70,78,80,80,81,90,110];
+
+function sumArray(arr){
+    // initialize a new variable to hold the sum of the arr
+    let sum = 0;
+    // loop through the guestCount arr, add each value to the sum
+    arr.forEach(item => sum += item);
+    // after done looping, return the sum
+    return sum;
+}
+
+console.log(sumArray(guestCount));
+
+/* Pizza Night?
+it's the weekend and you and your friends can't agree on
+what to order for dinner, so you put it to a vote.
+
+Write a function to find the food with the highest number of votes.
+
+Your function should take in a food object and find the food
+with the most votes. It should log the winner, along with how many votes it received.
+*/
+
+const gameNightFood = {
+    "🍕pizza": 3,
+    "🌮tacos": 10,
+    "🥗salads": 7,
+    "🍝pasta": 5
+}
+
+function findTheWinner(obj){
+    // initialize some new variable to:
+       // keep track of the current highest vote number
+       let highestVotes = 0;
+       // keep track of the current winning item
+       let winningItem = "";
+    // for each food option in the food object
+    for(let food in obj){
+        // is the current value higher than the value of highestVotes?
+        if(obj[food] >highestVotes){
+            // yes: the new value of highestVotes in the current value and 
+            highestVotes = obj[food];
+            // winningItem = food;
+        }
+    }
+
+    // return string announcing the winner using winningItme and highestVote variables
+    return `The winner is ${winningItem} with ${highestVotes} votes.`
+}
+
+console.log(findTheWinner(gameNightFood));
