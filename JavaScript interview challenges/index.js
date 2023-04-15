@@ -382,3 +382,88 @@ function findTheWinner(obj){
 }
 
 console.log(findTheWinner(gameNightFood));
+
+import userData from "./data.js";
+
+/* Totally Private Data Farm
+
+Write a function that maps through the current data and returns 
+a new an array of objects with only two properties:
+fullName and birthday. Each result in your
+array should look like this when you're done.
+
+{
+    fullName: "Arzu Caner"
+    birtday: "Fri Agu 15 1945"
+}
+
+Read about toDateString() for info on formatting a readable date.
+
+*/
+
+function transformData(data){
+    // use map to loop through the data
+    return data.map(({name, dob}) => {
+        // return an object with the two new properties
+        // concat the first and last name
+
+         // create a new date object, passing in the dob
+         // format by calling toDateSrting() method
+         return{
+            fullname: `${name.first} ${name.last}`,
+            birthday: new Date(dob.date).toDateString()
+         }
+    })
+}
+
+console.log(transformData(userData));
+
+import podcasts from "./data/js";
+
+/* Find Free Podcasts
+
+Write a function that takes in the podcast data and returns an new 
+array of only those podcasts which are free.
+*/
+
+function getFreePodcasts(data){
+    // filter list by paid prop
+    // use map to create a new array of objects with only the specified properties
+    return data
+        .filter(item => item.paid === false)
+        .map(podcast => {
+            return {
+                title: podcast.title,
+                rating: podcast.rating,
+                paid: podcast.paid
+            }
+        });
+}
+
+console.log(getFreePodcasts(podcasts))
+
+import products from "./data.js";
+
+/* it's the day after Hallowen 🎃 and all the candy is on sale!
+
+To buy up all the candy, use map() and filter() to put all the
+candy into a `shoppingCart` array.
+
+*/
+
+function getSaleItems(data){
+    //filter the date by product.type -- only sweet
+    return data
+    .filter(product => product.type === "sweet")
+    // loop through the date using map
+    .map(({item, price}) => {
+        // for every candy, return a new object with only item and price
+        return {
+            item,
+            price
+        }
+    });
+};
+
+const shoppingCart = getSaleItems(products);
+console.log(shoppingCart);
