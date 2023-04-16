@@ -35,5 +35,29 @@ export default [
     type: "sweet",
 }
 
+{
+    id: 1,
+    title: "Stanger Sc",
+    duration: 40,
+    tags: ["supernatural", "honor", "drama"],
+},
+
+{
+    id: 2,
+    title: "The Sc of the Dragon",
+    duration: 60,
+    tags: ["drama", "fantasy"]
+}
+
+{
+id: 1,
+title: "Sc Padcast"
+duration: 50,
+tags: ["education", "jobs", "technology",]
+hosts: ["Alex Bookerr"],
+rating: 10,
+genre: "education",
+paid: false
+}
 
 

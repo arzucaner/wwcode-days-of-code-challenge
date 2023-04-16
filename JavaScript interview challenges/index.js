@@ -467,3 +467,98 @@ function getSaleItems(data){
 
 const shoppingCart = getSaleItems(products);
 console.log(shoppingCart);
+
+import products from "./data.js";
+
+/* You're online shopping for holiday gifts, but money is tight
+so we need to look at the cheapest items first.
+Use the built in sort() method to write a function that returns a new array of
+products sorted by price, cheapest to most expensive.
+
+Then log the item and price to the console:
+
+❤️, 0
+🍬, 0.89
+🍫, 0.99
+🧁, 0.99
+... continued
+*/
+
+function sortProducts(data){
+    return data.sort((a,b) => {
+        return a.price - b.price
+    });
+}
+
+const listByCheapest = sortProducts(products);
+// console.log(listByCheapest);
+
+listByCheapest.forEach(item => console.log(item.product, item.price));
+
+import mediaData from "./js";
+
+/* Find All Unique Tags
+
+As a frontend dev at ScFlix, you're working on a featur to let users browse TV shows by tag. The first step is to collect all the tags from our data into a new array.
+Then we'll need to filter out the duplicate tags.
+
+Write a function that takes in the media data and returns a flat array of unique tags.
+
+Expected output:
+["supernatural", "horror", "drama",
+"fantasy", "reality", "home improvement", "comedy", "sci-fi", "adventure"]
+
+*/
+
+function getUniqueTags(data){
+    // use map to loop through the data and get a new array of tags
+    // flatten the tags array with .flat()
+    const tags = data.map(podcast => podcast.tags).flat();
+    // create a new array uniqueTags to hold the unique values
+    const uniqueTags = [];
+    // loop through the tags array
+
+    tags.forEach(tag => {
+        // is the element already in the uniqueTags arr?
+        if(!uniqueTags.includes(tag)){
+            uniqueTags.push(tag)
+        }
+    })
+
+    return uniqueTags;
+}
+
+console.log(getUniqueTags(mediaData));
+
+import podcasts from "./data.js";
+
+/* Welcome Aboard Sc Airlines
+
+Our Sc Airlines in-flight entertainment package
+includes a variety of podcasts. We need to add a feature that suggests
+podcasts to our patrons based on whether a flight is short or long.
+
+Your sort function should take two arguments: the podcast data and flight length. If the flight is 60 munites or less, sort the podcast list
+from shortest to longest. If it's anything else, sort from longest to shortest.
+*/
+
+function sortByDuration(data, flightLength){
+
+    // Check if flight is greater than 60 minutes
+    if(flightLength > 60){
+        // if yes, sort decending order (longest to shortes)
+        data.sort((a,b) => b.duration - a.duration);
+    } else {
+        data.sort((a,b) => a.duration - b.duration);
+    }
+    // loop through my sorted array
+    data.forEach(({title, duration}, index) => {
+        // construct a string using the title and duration props
+        //use the index to number the list
+        //console.log each item
+        console.log(`${index + 1}. ${title}, ${duration} munites`);
+    });
+
+}
+
+sortByDuration(podcasts, 61);
