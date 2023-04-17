@@ -562,3 +562,98 @@ function sortByDuration(data, flightLength){
 }
 
 sortByDuration(podcasts, 61);
+
+import postDate from "./data.js";
+
+/* Popularity Concest
+
+Iggy the Influencer and Toby the Tiktoker ar dying to know
+who's more popular on social media.
+
+Toby's Tiktoks get an average of 400 likes. On average, how many likes
+do Iggy's Instagram posts get?
+
+In data.js you'll find a list of Iggy's recent posts.
+Use reduce() to write a function that returns the average number
+of likes.
+To find the average, add up the total number of likes, then divide by the total number of posts.
+*/
+
+function calcAverageLikes(data){
+    //reduce to single total
+    const total = data.reduce((acc, curr)=> {
+        //add curr.likes to acc
+        return acc += curr.calcAverageLikes
+    }, 0);
+    // divide the total by data.length to get the avg
+    return total / data.length;
+    }
+
+    console.log(calcAverageLikes(postDate))
+
+import podcasts from "./data/js";
+
+/* Save the Weekend
+
+Tour best friend is a copywriter who writes product descriptions
+for a living. You want to use your hacking skills to help them
+automate their job so you both can spend the weekend on a tropical island.
+
+Use array methods and the existing podcast data to write a function that 
+can generate a description for each podcast.
+
+Add the description as a new property on each podcast object, and return
+a new podcast array where each podcast has a description.
+*/
+
+function createDescriptionsFor(data){
+    // map through the data
+    return data.map(podcast => {
+        const {title, duration, genre, hosts} = podcast;
+        // use title, duration, genre and host data to make description
+        // for each podcast object, add description prop
+        return {
+            ...podcast,
+            description: `${title} is a ${duration} minute ${genre} podcast hosted
+            by ${hosts[0]}`
+        };
+    })
+}
+
+console.log(createDescriptionsFor(podcasts))
+
+/*Find anagrams in an array
+
+When two words have the exact same letters, they are anagrams.
+
+Each item in the anagrams array is an anagram of a Zero2Hero teacher's
+first and last name, plus the phrase "Zero2Hero teacher".
+
+Write a function to determine which strings in the array are anagrams of "Arzu Caner Zero2Hero teacher".
+
+Your function should take two parameters: the phrase you want to compare to
+the anagrams, and an array of anagrams. The function sholud return a new array of anagrams that match the phrase.
+*/
+
+const anagrams = [
+    "moz biblical torchbearers",
+    "it's razorbill beachcomber"
+]
+
+function sortPhrase(phrase){
+    return phrase.toLowerCase().split('').sort().join('').trim();
+}
+
+function isAnagramInArray(anagram, arr) {
+    // use.filter()
+    // use sortPhrase() to sort both the input phrase and the current phrase in the array
+    // compare the two words to return true or false
+    return arr.filter(item => {
+        const word1 = sortPhrase(anagram);
+        const word2 = sortPhrase(item);
+
+        return word1 === word2;
+    })
+}
+
+console.log(isAnagramInArray("Arzu Caner Zero2Hero teacher, anagrams"));
