@@ -657,3 +657,4 @@ function isAnagramInArray(anagram, arr) {
 }
 
 console.log(isAnagramInArray("Arzu Caner Zero2Hero teacher, anagrams"));
+
