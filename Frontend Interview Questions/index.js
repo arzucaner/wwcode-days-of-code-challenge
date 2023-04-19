@@ -62,3 +62,52 @@ const value2 = '5';
 
 console.log(value1 == value2);
 console.log(value1 === value2);
+
+/**
+ * Q: What is the difference between undefined and null?
+ */
+
+const user2 = {
+
+};
+
+console.log(user.firstName);
+console.log(user2.firstName)
+
+/**
+ * Q: What do the spread and rest operators do?
+ */
+
+const users = ['Dylan', 'Per', 'Dollan'];
+const allUsers = ['Olivia', ...users];
+console.log(allUsers);
+
+const user = { firstName: 'Arzu', lastName: 'Caner', channel: 'codingtutorials360'}
+const defaults = { channel: 'zero2hero', ...user };
+console.log(defaults);
+
+const {channel, ...remainder} = defaults;
+
+console.log(remainder)
+
+function assnums(...nums){
+    return nums.reduce((total, current) => { return total + current; }, 0)
+}
+
+console.log(addNums(1,2,3))
+console.log(addNums(1,2))
+
+/**
+ * 
+ * Q: What is and why might you destructure an object or array?
+ */
+
+const dob = [10, 25, 1875];
+const [day, month, year] = dob;
+
+const user = {
+    f: 'Arzu',
+    l: 'Caner'
+};
+
+const {f: firstName, l: lastName} = user;
