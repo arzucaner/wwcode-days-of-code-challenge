@@ -111,3 +111,33 @@ const user = {
 };
 
 const {f: firstName, l: lastName} = user;
+
+/**
+ * Q: What are some issues with numbers in JavaScript you may have to protect against?
+ */
+
+console.log(0.2 + 0.1);
+
+/**
+ * Q: What is pass by reference and how does it differ from pass by value?
+ */
+
+const prim = 5;
+
+function add(value) {
+    value++;
+
+    return value;
+}
+
+console.log(add(prim), prim);
+
+const ref= {count:5};
+
+function add2(value) {
+    value.count++;
+
+    return value.count;    
+}
+
+console.log(add2(ref), ref.count);
