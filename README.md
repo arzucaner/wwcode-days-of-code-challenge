@@ -12,11 +12,11 @@
 ### Projects
 Here are some of the projects I created during the challenge:
 
-Project 1: [Chocolate Cake]
-Project 2: [Navigation Bar with CSS animation]
-Project 3: [Landing Page with Animation]
-Project 4: [Coworking Space Site]
-Project 5: [Weekly Schedule]
+- Project 1: [Chocolate Cake]
+- Project 2: [Navigation Bar with CSS animation]
+- Project 3: [Landing Page with Animation]
+- Project 4: [Coworking Space Site]
+- Project 5: [Weekly Schedule]
 
 
 ---
