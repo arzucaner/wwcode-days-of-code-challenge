@@ -44,7 +44,7 @@ Here are some of the projects I created during the challenge:
 
 ### Conclusion
 Women Who Code's Days of Code Challenge
-I successfully completed the Women Who Code's Days of Code Challenge, coding for 100 consecutive days and creating numerous projects. Throughout the challenge, I learned new programming languages and frameworks including Redux, Bootstrap 4, Alpine.js, Advanced React, Firebase App, ul design, CSS animation, and JavaScript. These projects are a testament to the skills and knowledge gained during the 100 days, showcasing the versatility of various languages and frameworks.
+I successfully completed the Women Who Code's Days of Code Challenge, coding for 100 consecutive days and creating numerous projects. Throughout the challenge, I learned new programming languages and frameworks including Redux, Bootstrap 4, Alpine.js, Advanced React, Firebase App, ul design, CSS animation, and JavaScript. These projects are a testament to the skills and knowledge gained during the 100 days, showcasing the versatility of various languages and frameworks. (These projects were inspired by the Scrimba education program)
 
 
 ---
