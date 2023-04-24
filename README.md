@@ -2,6 +2,11 @@
 
 ---
 
+![100 Days WWCode Days of Code Challenge](https://user-images.githubusercontent.com/108270415/233944963-651ea4ca-87d3-4198-9277-b16f1e0ee156.png)
+
+
+---
+
 
 ### I successfully completed the Women Who Code's Days of Code Challenge, coding for 100 consecutive days and creating numerous projects. Throughout the challenge, I learned new programming languages and frameworks including Redux, Bootstrap 4, Alpine.js, Advanced React, Firebase App, ul design, CSS animation, and JavaScript. These projects are a testament to the skills and knowledge gained during the 100 days, showcasing the versatility of various languages and frameworks.
 
@@ -23,14 +28,14 @@ Here are some of the projects I created during the challenge:
 
 
 ### Skills Gained
-Redux
-Bootstrap 4
-Alpine.js
-Advanced React
-Firebase App
-Ul Design
-CSS Animation
-JavaScript
+- Redux
+- Bootstrap 4
+- Alpine.js
+- Advanced React
+- Firebase App
+- Ul Design
+- CSS Animation
+- JavaScript
 
 
 ---
